@@ -1,26 +1,30 @@
 {
-  "name": "eslint-plugin-rxjs-fixers",
-  "version": "0.0.0-development",
+  "name": "eslint-plugin-rxjs-fixers-poc",
+  "version": "0.0.6",
   "description": "ESLint fixers for RxJS",
-  "main": "index.js",
+  "bin": "./bin/eslint-plugin-rxjs-fixers",
+  "script": "index.js",
   "scripts": {
     "test": "jest",
     "prebuild": "rimraf -rf ./dist",
     "build": "tsc",
-    "postbuild": "cpy ./package.json ./dist",
+    "postbuild": "cpy ./package.json ./dist && cpy --parents ./bin ./dist && cd ./dist && npm pack && cd ..",
     "lint": "eslint --ext .ts ./src/** ./tests/**"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "typescript": "^3.8.3"
+  },
   "devDependencies": {
     "@types/eslint": "^6.1.9",
     "@types/jest": "^25.1.4",
     "@types/node": "^13.9.8",
-    "@typescript-eslint/eslint-plugin": "^2.26.0",
-    "@typescript-eslint/parser": "^2.26.0",
     "cpy-cli": "^3.1.0",
-    "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
@@ -28,7 +32,6 @@
     "lint-staged": "^10.1.1",
     "prettier": "^2.0.2",
     "rimraf": "^3.0.2",
-    "ts-jest": "^25.3.0",
-    "typescript": "^3.8.3"
+    "ts-jest": "^25.3.0"
   }
 }

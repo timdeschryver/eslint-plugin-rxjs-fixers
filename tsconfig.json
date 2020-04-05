@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "importHelpers": true,
-    "lib": ["dom", "es2020"],
-    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "declarationMap": false,
+    "target": "es2017",
+    "lib": ["dom", "es2017"],
+    "module": "CommonJS",
     "moduleResolution": "node",
-    "noEmitHelpers": true,
     "noImplicitAny": true,
     "outDir": "./dist",
     "removeComments": true,
-    "skipLibCheck": true,
     "sourceMap": false,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5",
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "resolveJsonModule": true
   },
   "include": ["./src/**/*.ts"]
 }

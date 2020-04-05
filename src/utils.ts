@@ -1,7 +1,7 @@
 import { TSESTree } from '@typescript-eslint/experimental-utils'
 
 export const docsUrl = (ruleName: string) =>
-  `https://github.com/testing-library/eslint-plugin-testing-library/tree/master/docs/rules/${ruleName}.md`
+  `https://github.com/timdeschryver/eslint-plugin-rxjs-fixers/tree/master/docs/rules/${ruleName}.md`
 
 export function isArrowFunctionExpression(
   node: TSESTree.Node,

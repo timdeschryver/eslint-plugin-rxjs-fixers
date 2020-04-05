@@ -4,7 +4,20 @@ import rule, { RULE_NAME } from '../../src/rules/operator-with'
 const ruleTester = createRuleTester()
 
 ruleTester.run(RULE_NAME, rule, {
-  valid: [],
+  valid: [
+    {
+      code: `
+        import { zipWith, combineLatestWith, mergeWith, concatWith } from 'rxjs/operators'
+
+        source$.pipe(
+          zipWith(other$),
+          combineLatestWith(a$, b$),
+          mergeWith(partner$),
+          concatWith(ender$),
+        )
+      `,
+    },
+  ],
   invalid: [
     {
       code: `
